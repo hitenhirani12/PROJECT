@@ -1,27 +1,32 @@
-let display = document.getElementById("display")
-let btns = document.querySelectorAll("button")
+let navbar = document.getElementById("navbar")
+let body = document.getElementById("bodie")
+let icons=document.getElementsByClassName("icon")
+let light=document.getElementById("sun")
+let dark =document.getElementById("moon")
 
-
-for(let item of btns)
+dark.addEventListener("click", () => {
+body.setAttribute("style","background-color:black")
+navbar.setAttribute("style","background-color:white")
+for(let item of icons)
 {
-    item.addEventListener("click" , (e) => {
-       if(e.target.innerText == "C")
-       {
-        display.value = ""
-       }
-       else if(e.target.innerText == "=")
-       {
-        try{
-            let ans = eval(display.value)
-            display.value = ans
-        } catch (error) {
-            display.value = "invalid Input"
-        }
-       }
-       else{
-            display.value += e.target.innerText
-       }
+    item.setAttribute("style", "color:black")
+}
+})
+
+light.addEventListener("click", () => {
+    body.setAttribute("style","backgroumd-color:white")
+    navbar.setAttribute("style","background-color:black")
+    for(let item of icons)
+    {
+        item.setAttribute("style", "color:white")
+    }
+    })
     
 
-    })
-}
+
+
+
+
+
+
+
